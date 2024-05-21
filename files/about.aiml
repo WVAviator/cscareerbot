@@ -1,131 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-    <!--Basic Info-->
+    <category>
+        <pattern>*</pattern>
+        <that>WHICH CAREER WOULD YOU LIKE TO LEARN MORE ABOUT</that>
+        <template><srai>ABOUT</srai></template>
+    </category>
+    
     <category>
         <pattern>^ ABOUT ^</pattern>
         <template>
-            <map name="about">
-                <get name="topic" />
-            </map>
+            <think>
+                <set var="response">
+                    <map name="about">
+                        <get name="topic"/>
+                    </map>
+                </set>
+            </think>
+            <condition var="response">
+                <li value="unknown">Which career would you like to learn more about?</li>
+                <li>
+                    <get var="response"/>
+                </li>
+            </condition>
         </template>
     </category>
-    
-    <!--Salary-->
-    <category>
-        <pattern>^ SALARY ^</pattern>
-        <template><map name="salary"><get name="topic"/></map></template>
-    </category>
-    <category>
-        <pattern>^ PAY ^</pattern>
-        <template>
-            <srai>SALARY</srai>
-        </template>
-    </category>
-    <category>
-        <pattern>HOW MUCH ^</pattern>
-        <template>
-            <srai>SALARY</srai>
-        </template>
-    </category>
-
-    
-    <!--Skills-->
-    <category>
-        <pattern>^ SKILLS ^</pattern>
-        <template><map name="skills"><get name="topic"/></map></template>
-    </category>
-    <category>
-        <pattern>^ KNOWLEDGE ^</pattern>
-        <template>
-            <srai>SKILLS</srai>
-        </template>
-    </category>
-
-    <!--Interactive-->
-	<category>
-	    <pattern>^ CAREERS ^</pattern>
-	    <template>
-	        I can provide you with information about the following careers:
-	            1. Software Engineer
-	            2. Data Scientist
-	            3. Cybersecurity Analyst
-	            4. DevOps Engineer
-	            5. QA Engineer
-	       
-	        Feel free to ask about any of these.
-	        <think>
-	            <set name="topic">about</set>
-	        </think>
-	    </template>
-	</category>
-	
-	<topic name="about">
-	    <category>
-	        <pattern>1</pattern>
-	        <template>
-	            <think>
-	                <set name="topic">software_engineer</set>
-	            </think>
-	            <srai>ABOUT</srai>
-	        </template>
-	    </category>
-	    <category>
-	        <pattern>2</pattern>
-	        <template>
-	            <think>
-	                <set name="topic">data_scientist</set>
-	            </think>
-	            <srai>ABOUT</srai>
-	        </template>
-	    </category>
-	    <category>
-	        <pattern>3</pattern>
-	        <template>
-	            <think>
-	                <set name="topic">cybersecurity</set>
-	            </think>
-	            <srai>ABOUT</srai>
-	        </template>
-	    </category>
-	    <category>
-	        <pattern>4</pattern>
-	        <template>
-	            <think>
-	                <set name="topic">devops</set>
-	            </think>
-	            <srai>ABOUT</srai>
-	        </template>
-	    </category>
-	    <category>
-	        <pattern>5</pattern>
-	        <template>
-	            <think>
-	                <set name="topic">qa</set>
-	            </think>
-	            <srai>ABOUT</srai>
-	        </template>
-	    </category>
-
-	    <category>
-	        <pattern>*</pattern>
-	        <template>
-	            <srai>ABOUT <star/></srai>
-	        </template>
-	    </category>
-
-	    
-	    <category>
-	        <pattern>^ MORE ^</pattern>
-	        <template>There are definitely many more careers to research that require a Computer Science degree beyond these. I recommend you research these online.</template>
-	    </category>
-	    <category>
-	        <pattern>^ OTHERS ^</pattern>
-	        <template>
-	            <srai>MORE</srai>
-	        </template>
-	    </category>
-	</topic>
-	
 </aiml>
 
 <!-- Sources -->

@@ -1,6 +1,6 @@
 [
-["software_engineer", "In addition to programming ability, software engineers must be able to collaborate, problem solve, and communicate with business users to understand and implement application requirements."],
-["data_scientist", "Data Scientists should have a good understanding of statistics and probability, knowledge of languages such as R, SQL, or Python, and an understanding of how to work with data and database management."],
+["swe", "In addition to programming ability, software engineers must be able to collaborate, problem solve, and communicate with business users to understand and implement application requirements."],
+["ds", "Data Scientists should have a good understanding of statistics and probability, knowledge of languages such as R, SQL, or Python, and an understanding of how to work with data and database management."],
 ["cybersecurity", "Cybersecurity Analysts must have scripting ability, an understanding of information security principals, knowledge of intrusion detection software, and an understanding of network and data security."],
 ["devops", "DevOps Engineers must have a fundamental understanding of cloud operations and site reliability, familiarity with Linux and server software, and knowledge of CI\/CD and automation software for automating software deployment and release."],
 ["qa", "QA Engineers must have a good understanding of the software development lifecycle, knowledge of programming languages for writing automated tests, and familiarity with concepts such as Test-Driven-Development for the dveelopment and maintenance of automated test suites."]

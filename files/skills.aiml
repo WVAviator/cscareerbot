@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>*</pattern>
+        <that>FOR WHICH CAREER WOULD YOU LIKE TO KNOW MORE ABOUT THE SKILLS REQUIRED</that>
+        <template><srai>SKILLS</srai></template>
+    </category>
+    
+    <category>
+        <pattern>^ SKILLS ^</pattern>
+        <template>
+            <think>
+                <set var="response">
+                    <map name="skills">
+                        <get name="topic"/>
+                    </map>
+                </set>
+            </think>
+            <condition var="response">
+                <li value="unknown">For which career would you like to know more about the skills required?</li>
+                <li>
+                    <get var="response"/>
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ KNOWLEDGE ^</pattern>
+        <template>
+            <srai>SKILLS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ LEARN ^</pattern>
+        <template>
+            <srai>SKILLS</srai>
+        </template>
+    </category>
+</aiml>

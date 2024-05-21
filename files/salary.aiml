@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>*</pattern>
+        <that>FOR WHICH CAREER WOULD YOU LIKE SALARY INFORMATION</that>
+        <template><srai>SALARY</srai></template>
+    </category>
+    
+    <category>
+        <pattern>^ SALARY ^</pattern>
+        <template>
+            <think>
+                <set var="response">
+                    <map name="salary">
+                        <get name="topic"/>
+                    </map>
+                </set>
+            </think>
+            <condition var="response">
+                <li value="unknown">For which career would you like salary information?</li>
+                <li>
+                    <get var="response"/>
+                </li>
+            </condition>
+        </template>
+    </category>
+    
+
+    
+    <category>
+        <pattern>^ PAY ^</pattern>
+        <template>
+            <srai>SALARY</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HOW MUCH ^</pattern>
+        <template>
+            <srai>SALARY</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ MONEY ^</pattern>
+        <template>
+            <srai>SALARY</srai>
+        </template>
+    </category>
+</aiml>

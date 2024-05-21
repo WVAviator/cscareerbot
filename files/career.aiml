@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>*</pattern>
+        <that>FEEL FREE TO ASK ABOUT ANY OF THESE</that>
+        <template>
+            <srai>ABOUT</srai>
+        </template>
+    </category>
+    
+	<category>
+	    <pattern>^ CAREERS ^</pattern>
+	    <template>
+	        I can provide you with information about the following careers: 
+	        Software Engineer, Data Scientist, Cybersecurity Analyst, DevOps Engineer, and QA Engineer. 
+	        Feel free to ask about any of these.
+	        <think>
+	            <set name="topic">about</set>
+	        </think>
+	    </template>
+	</category>
+	
+	<topic name="about">
+	    <category>
+	        <pattern>1</pattern>
+	        <template>
+	            <think>
+	                <set name="topic">software_engineer</set>
+	            </think>
+	            <srai>ABOUT</srai>
+	        </template>
+	    </category>
+	    <category>
+	        <pattern>2</pattern>
+	        <template>
+	            <think>
+	                <set name="topic">data_scientist</set>
+	            </think>
+	            <srai>ABOUT</srai>
+	        </template>
+	    </category>
+	    <category>
+	        <pattern>3</pattern>
+	        <template>
+	            <think>
+	                <set name="topic">cybersecurity</set>
+	            </think>
+	            <srai>ABOUT</srai>
+	        </template>
+	    </category>
+	    <category>
+	        <pattern>4</pattern>
+	        <template>
+	            <think>
+	                <set name="topic">devops</set>
+	            </think>
+	            <srai>ABOUT</srai>
+	        </template>
+	    </category>
+	    <category>
+	        <pattern>5</pattern>
+	        <template>
+	            <think>
+	                <set name="topic">qa</set>
+	            </think>
+	            <srai>ABOUT</srai>
+	        </template>
+	    </category>
+
+	    <category>
+	        <pattern>^ MORE ^</pattern>
+	        <template>There are definitely many more careers to research that require a Computer Science degree beyond these. I recommend you research these online.</template>
+	    </category>
+	    <category>
+	        <pattern>^ OTHERS ^</pattern>
+	        <template>
+	            <srai>MORE</srai>
+	        </template>
+	    </category>
+	</topic>
+</aiml>
