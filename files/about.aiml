@@ -1,112 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-    <!-- Software Engineer -->
+    <!--Basic Info-->
+    <category>
+        <pattern>^ ABOUT ^</pattern>
+        <template>
+            <map name="about">
+                <get name="topic" />
+            </map>
+        </template>
+    </category>
+    
+    <!--Salary-->
+    <category>
+        <pattern>^ SALARY ^</pattern>
+        <template><map name="salary"><get name="topic"/></map></template>
+    </category>
+    <category>
+        <pattern>^ PAY ^</pattern>
+        <template>
+            <srai>SALARY</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HOW MUCH ^</pattern>
+        <template>
+            <srai>SALARY</srai>
+        </template>
+    </category>
+
+    
+    <!--Skills-->
+    <category>
+        <pattern>^ SKILLS ^</pattern>
+        <template><map name="skills"><get name="topic"/></map></template>
+    </category>
+    <category>
+        <pattern>^ KNOWLEDGE ^</pattern>
+        <template>
+            <srai>SKILLS</srai>
+        </template>
+    </category>
+
+    <!--Interactive-->
 	<category>
-	    <pattern>^ ABOUT ^ SOFTWARE ENGINEER ^</pattern>
-	    <template>
-	        Software Engineers/Developers write, debug, and deploy applications, websites, and software. They work with programming languages to design, code, test, and debug software applications tailored to meet user needs.
-	        <think>
-	            <set name="topic">software_engineer</set>
-	        </think>
-	    </template>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ SOFTWARE DEVELOPER ^</pattern>
-	    <srai>ABOUT SOFTWARE ENGINEER</srai>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ PROGRAMMER ^</pattern>
-	    <srai>ABOUT SOFTWARE ENGINEER</srai>
-	</category>
-		<category>
-	    <pattern>^ ABOUT ^ DEVELOPER ^</pattern>
-	    <srai>ABOUT SOFTWARE ENGINEER</srai>
-	</category>
-	
-	<!-- Data Scientist -->
-	<category>
-	    <pattern>^ ABOUT ^ DATA SCIENTIST ^</pattern>
-	    <template>
-	        Data Scientists (or Data Engineers) analyze and interpret complex data sets to help company management make informed decisions. They use statistical analysis, machine learning, and data visualization to uncover paterns and insights from data.
-	        <think>
-	            <set name="topic">software_scientist</set>
-	        </think>
-	    </template>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ DATA ENGINEER ^</pattern>
-	    <srai>ABOUT DATA SCIENTIST</srai>
-	</category>
-	
-	<!-- Cybersecurity Analyst -->
-	<category>
-	    <pattern>^ ABOUT ^ CYBERSECURITY ^</pattern>
-	    <template>
-	        Cybersecurity Analysts work to protect an organizations network and computer systems from threats. They focus an avoiding breaches to systems and protecting the confidentiality, integrity, and availability of data.
-	        They may also conduct tests for network and software weaknesses and provide training for employees.
-	        <think>
-	            <set name="topic">cybersecurity</set>
-	        </think>
-	    </template>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ HACK ^</pattern>
-	    <srai>ABOUT CYBERSECURITY</srai>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ SECURITY ^</pattern>
-	    <srai>ABOUT CYBERSECURITY</srai>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ INFOSEC ^</pattern>
-	    <srai>ABOUT CYBERSECURITY</srai>
-	</category>
-	
-	<!-- DevOps Engineer -->
-	<category>
-	    <pattern>^ ABOUT ^ DEVOPS ^</pattern>
-	    <template>
-	        DevOps or Site Reliability Engineers work to ensure the network and web resources of an organization remain availability and run efficiently. They assist with the development and maintenance of Continuous Integration and Continuous Deployment operations to ensure a smooth develop and release workflow. 
-	        <think>
-	            <set name="topic">devops</set>
-	        </think>
-	    </template>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ SITE RELIABILITY ^</pattern>
-	    <srai>ABOUT DEVOPS</srai>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ OPERATIONS ^</pattern>
-	    <srai>ABOUT DEVOPS</srai>
-	</category>
-	
-	<!-- QA Engineer -->
-	<category>
-	    <pattern>^ ABOUT ^ QA ^</pattern>
-	    <template>
-	        Quality Assurance Engineers are responsible for writing and conducting software tests to ensure that the code meets all business requirements. They help developers troubleshoot, identify, and resolve problems before the software is released into production.
-	        <think>
-	            <set name="topic">qa</set>
-	        </think>
-	    </template>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ QUALITY ASSURANCE ^</pattern>
-	    <srai>ABOUT QA</srai>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ TEST ^ ENGINEER ^</pattern>
-	    <srai>ABOUT QA</srai>
-	</category>
-	<category>
-	    <pattern>^ ABOUT ^ ENGINEER ^ TEST ^</pattern>
-	    <srai>ABOUT QA</srai>
-	</category>
-	
-	<!-- General -->
-	<category>
-	    <pattern>ABOUT ^ CAREERS</pattern>
+	    <pattern>^ CAREERS ^</pattern>
 	    <template>
 	        I can provide you with information about the following careers:
 	            1. Software Engineer
@@ -125,53 +62,67 @@
 	<topic name="about">
 	    <category>
 	        <pattern>1</pattern>
-	        <srai>ABOUT SOFTWARE ENGINEER</srai>
+	        <template>
+	            <think>
+	                <set name="topic">software_engineer</set>
+	            </think>
+	            <srai>ABOUT</srai>
+	        </template>
 	    </category>
 	    <category>
 	        <pattern>2</pattern>
-	        <srai>ABOUT DATA SCIENTIST</srai>
+	        <template>
+	            <think>
+	                <set name="topic">data_scientist</set>
+	            </think>
+	            <srai>ABOUT</srai>
+	        </template>
 	    </category>
 	    <category>
 	        <pattern>3</pattern>
-	        <srai>ABOUT CYBERSECURITY</srai>
+	        <template>
+	            <think>
+	                <set name="topic">cybersecurity</set>
+	            </think>
+	            <srai>ABOUT</srai>
+	        </template>
 	    </category>
 	    <category>
 	        <pattern>4</pattern>
-	        <srai>ABOUT DEVOPS</srai>
+	        <template>
+	            <think>
+	                <set name="topic">devops</set>
+	            </think>
+	            <srai>ABOUT</srai>
+	        </template>
 	    </category>
 	    <category>
 	        <pattern>5</pattern>
-	        <srai>ABOUT QA</srai>
+	        <template>
+	            <think>
+	                <set name="topic">qa</set>
+	            </think>
+	            <srai>ABOUT</srai>
+	        </template>
 	    </category>
-	    
+
 	    <category>
-	        <pattern>SOFTWARE ^</pattern>
-	        <srai>ABOUT SOFTWARE ENGINEER</srai>
+	        <pattern>*</pattern>
+	        <template>
+	            <srai>ABOUT <star/></srai>
+	        </template>
 	    </category>
-	    <category>
-	        <pattern>DATA ^</pattern>
-	        <srai>ABOUT DATA SCIENTIST</srai>
-	    </category>
-	    <category>
-	        <pattern>CYBERSECURITY ^</pattern>
-	        <srai>ABOUT CYBERSECURITY</srai>
-	    </category>
-	    <category>
-	        <pattern>DEVOPS ^</pattern>
-	        <srai>ABOUT DEVOPS</srai>
-	    </category>
-	    <category>
-	        <pattern>QA ^</pattern>
-	        <srai>ABOUT QA</srai>
-	    </category>
+
 	    
 	    <category>
 	        <pattern>^ MORE ^</pattern>
-	        <template>There are many more careers to research that require a Computer Science degree. I recommend you research these online.</template>
+	        <template>There are definitely many more careers to research that require a Computer Science degree beyond these. I recommend you research these online.</template>
 	    </category>
 	    <category>
 	        <pattern>^ OTHERS ^</pattern>
-	        <srai>MORE</srai>
+	        <template>
+	            <srai>MORE</srai>
+	        </template>
 	    </category>
 	</topic>
 	
@@ -179,8 +130,12 @@
 
 <!-- Sources -->
 
-<!-- https://www.park.edu/blog/top-10-career-paths-you-can-pursue-with-a-computer-science-degree/ -->
-
+<!--https://www.park.edu/blog/top-10-career-paths-you-can-pursue-with-a-computer-science-degree/-->
+<!--https://www.salary.com/-->
+<!--https://www.jobscan.co/skills/software-engineer-->
+<!--https://www.coursera.org/articles/data-scientist-skills-->
+<!--https://www.coursera.org/articles/cybersecurity-analyst-skills-->
+<!--https://www.comptia.org/blog/top-skills-for-devops-engineers-->
 
 
 
