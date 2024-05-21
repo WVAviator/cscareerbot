@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <!-- Checks of any containing aliases that map to topic names and sets the topic. -->
+	<category>
+	    <pattern># <set>aliases</set> #</pattern>
+	    <template>
+	        <think>
+	            <set name="topic">
+	                <map name="aliases">
+	                    <star index="2"/>
+	                </map>
+	            </set>
+	        </think>
+	        <srai>
+	            <star index="1"/>
+	            <star index="2"/>
+	            <star index="3"/>
+	        </srai>
+	    </template>
+	</category>
+</aiml>
