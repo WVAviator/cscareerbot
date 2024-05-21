@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <!-- Software Engineer -->
+	<category>
+	    <pattern>^ABOUT ^ SOFTWARE ENGINEER^</pattern>
+	    <template>
+	        Software Engineers/Developers write, debug, and deploy applications, websites, and software. They work with programming languages to design, code, test, and debug software applications tailored to meet user needs.
+	        <set name="topic">software_engineer</set>
+	    </template>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ SOFTWARE DEVELOP^</pattern>
+	    <srai>ABOUT SOFTWARE ENGINEER</srai>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ PROGRAMMER^</pattern>
+	    <srai>ABOUT SOFTWARE ENGINEER</srai>
+	</category>
+		<category>
+	    <pattern>^ABOUT ^ DEVELOPER^</pattern>
+	    <srai>ABOUT SOFTWARE ENGINEER</srai>
+	</category>
+	
+	<!-- Data Scientist -->
+	<category>
+	    <pattern>^ABOUT ^ DATA SCIEN^</pattern>
+	    <template>
+	        Data Scientists (or Data Engineers) analyze and interpret complex data sets to help company management make informed decisions. They use statistical analysis, machine learning, and data visualization to uncover paterns and insights from data.
+	        <set name="topic">data_scientist</set>
+	    </template>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ DATA ENGINEER^</pattern>
+	    <srai>ABOUT DATA SCIENTIST</srai>
+	</category>
+	
+	<!-- Cybersecurity Analyst -->
+	<category>
+	    <pattern>^ABOUT ^ CYBERSECURITY^</pattern>
+	    <template>
+	        Cybersecurity Analysts work to protect an organizations network and computer systems from threats. They focus an avoiding breaches to systems and protecting the confidentiality, integrity, and availability of data.
+	        They may also conduct tests for network and software weaknesses and provide training for employees.
+	        <set name="topic">cybersecurity_analyst</set>
+	    </template>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ HACK^</pattern>
+	    <srai>ABOUT CYBERSECURITY</srai>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ SECURITY^</pattern>
+	    <srai>ABOUT CYBERSECURITY</srai>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ INFOSEC^</pattern>
+	    <srai>ABOUT CYBERSECURITY</srai>
+	</category>
+	
+	<!-- DevOps Engineer -->
+	<category>
+	    <pattern>^ABOUT ^ DEVOPS^</pattern>
+	    <template>
+	        DevOps or Site Reliability Engineers work to ensure the network and web resources of an organization remain availability and run efficiently. They assist with the development and maintenance of Continuous Integration and Continuous Deployment operations to ensure a smooth develop and release workflow. 
+	        <set name="topic">devops_engineer</set>
+	    </template>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ SITE RELIABILITY^</pattern>
+	    <srai>ABOUT DEVOPS</srai>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ OPERATIONS^</pattern>
+	    <srai>ABOUT DEVOPS</srai>
+	</category>
+	
+	<!-- QA Engineer -->
+	<category>
+	    <pattern>^ABOUT ^ QA^</pattern>
+	    <template>
+	        Quality Assurance Engineers are responsible for writing and conducting software tests to ensure that the code meets all business requirements. They help developers troubleshoot, identify, and resolve problems before the software is released into production.
+	        <set name="topic">qa_engineer</set>
+	    </template>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ QUALITY ASSURANCE^</pattern>
+	    <srai>ABOUT QA</srai>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ TEST ^ ENGINEER^</pattern>
+	    <srai>ABOUT QA</srai>
+	</category>
+	<category>
+	    <pattern>^ABOUT ^ ENGINEER ^ TEST</pattern>
+	    <srai>ABOUT QA</srai>
+	</category>
+	
+	<!-- General -->
+	<category>
+	    <pattern>^ABOUT ^ CAREER^</pattern>
+	    <template>
+	        I can provide you with information about the following careers:
+	            1. Software Engineer
+	            2. Data Scientist
+	            3. Cybersecurity Analyst
+	            4. DevOps Engineer
+	            5. QA Engineer
+	       
+	        Feel free to ask about any of these.
+	        <set name="topic">about</set>
+	    </template>
+	</category>
+	
+	<topic name="about">
+	    <category>
+	        <template>1</template>
+	        <srai>ABOUT SOFTWARE ENGINEER</srai>
+	    </category>
+	    <category>
+	        <template>2</template>
+	        <srai>ABOUT DATA SCIENTIST</srai>
+	    </category>
+	    <category>
+	        <template>3</template>
+	        <srai>ABOUT CYBERSECURITY</srai>
+	    </category>
+	    <category>
+	        <template>4</template>
+	        <srai>ABOUT DEVOPS</srai>
+	    </category>
+	    <category>
+	        <template>5</template>
+	        <srai>ABOUT QA</srai>
+	    </category>
+	    
+	    <category>
+	        <template>SOFTWARE^</template>
+	        <srai>ABOUT SOFTWARE ENGINEER</srai>
+	    </category>
+	    <category>
+	        <template>DATA^</template>
+	        <srai>ABOUT DATA SCIENTIST</srai>
+	    </category>
+	    <category>
+	        <template>CYBERSECURITY^</template>
+	        <srai>ABOUT CYBERSECURITY</srai>
+	    </category>
+	    <category>
+	        <template>DEVOPS^</template>
+	        <srai>ABOUT DEVOPS</srai>
+	    </category>
+	    <category>
+	        <template>QA^</template>
+	        <srai>ABOUT QA</srai>
+	    </category>
+	</topic>
+	
+</aiml>
+
+<!-- Sources -->
+
+<!-- https://www.park.edu/blog/top-10-career-paths-you-can-pursue-with-a-computer-science-degree/ -->
+
+
+
+
+
+
+
+
+
+
+
