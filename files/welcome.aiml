@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+	    <pattern>HELLO</pattern>
+	    <template>
+	        <think>
+	            <set name="topic">welcome</set>
+	        </think>
+	        Welcome! I'm here to help you learn more about career opportunities with your Computer Science degree. What is your name?
+	    </template>
+    </category>
+    <category>
+        <pattern>HI</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+    
+    <topic name="welcome">
+        <category>
+            <pattern>*</pattern>
+            <that>WHAT IS YOUR NAME</that>
+            <template>
+                Hello, <set name="name"><star/></set>!
+                <srai>HELP</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>^ HELP ^</pattern>
+            <template>I can help you learn about career opportunities. You can ask for information about the most popular careers, or I can identify a career for you based on your interests.</template>
+        </category>
+    </topic>
+</aiml>

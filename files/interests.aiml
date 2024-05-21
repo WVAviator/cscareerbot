@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>^ INTERESTS ^</pattern>
+        <template>
+            <think>
+                <set name="topic">interests</set>
+            </think>
+            I can certainly help you identify the best career choice based on your interests! 
+            <srai>XINTERESTSTART</srai>
+        </template>
+    </category>
+    
+    <topic name="interests">
+        <category>
+            <pattern>XINTERESTSTART</pattern>
+            <template>What sorts of things are you interested in working with? List only one interest or skill.</template>
+        </category>
+        
+        <category>
+            <pattern>^ <set>interests</set> ^</pattern>
+            <that>LIST ONLY ONE INTEREST OR SKILL</that>
+            <template>
+                <think>
+                    <set var="interest"><star index="2" /></set>
+                    <set name="career">
+                        <map name="interests"><get var="interest"/></map>
+                    </set>
+                </think>
+                <condition name="career">
+                    <li value="unknown">I'm not sure which career option would work with that interest, let's try another. <srai>XINTERESTSTART</srai></li>
+                    <li>
+                        People interested in <get var="interest" /> typically enjoy working as <map name="careers"><get name="career"/></map>.
+                        Would you like to learn more about this career?
+                    </li>
+                </condition>
+
+            </template>
+        </category>
+                        
+        <category>
+            <pattern>YES</pattern>
+            <that>WOULD YOU LIKE TO LEARN MORE</that>
+            <template>
+                <think>
+                    <set name="topic"><get name="career"/></set>    
+                </think>
+                <srai>ABOUT</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>NO</pattern>
+            <that>WOULD YOU LIKE TO LEARN MORE</that>
+            <template>
+                Ok, no problem.  
+                <srai>XINTERESTSTART</srai>
+            </template>
+        </category>
+        <category>
+            <pattern>Y</pattern>
+            <template><srai>YES</srai></template>
+        </category>
+        <category>
+            <pattern>N</pattern>
+            <template><srai>NO</srai></template>
+        </category>
+    </topic>
+</aiml>
