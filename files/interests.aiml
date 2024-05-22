@@ -40,7 +40,7 @@
                         
         <category>
             <pattern>YES</pattern>
-            <that>WOULD YOU LIKE TO LEARN MORE</that>
+            <that>WOULD YOU LIKE TO LEARN MORE ABOUT THIS CAREER</that>
             <template>
                 <think>
                     <set name="topic"><get name="career"/></set>    
@@ -56,8 +56,21 @@
                 <srai>XINTERESTSTART</srai>
             </template>
         </category>
+        
         <category>
             <pattern>Y</pattern>
+            <template><srai>YES</srai></template>
+        </category>
+        <category>
+            <pattern>SURE</pattern>
+            <template><srai>YES</srai></template>
+        </category>
+        <category>
+            <pattern>OK</pattern>
+            <template><srai>YES</srai></template>
+        </category>
+        <category>
+            <pattern>OKAY</pattern>
             <template><srai>YES</srai></template>
         </category>
         <category>
