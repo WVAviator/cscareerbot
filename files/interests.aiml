@@ -50,7 +50,7 @@
         </category>
         <category>
             <pattern>NO</pattern>
-            <that>WOULD YOU LIKE TO LEARN MORE</that>
+            <that>WOULD YOU LIKE TO LEARN MORE ABOUT THIS CAREER</that>
             <template>
                 Ok, no problem.  
                 <srai>XINTERESTSTART</srai>
